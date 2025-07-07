@@ -73,6 +73,22 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
+        /* Pulse animation for the button */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            }
+            50% {
+                transform: scale(1.02); /* Slightly larger */
+                box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            }
+        }
+
         .button-style {
             background-color: #ffcc00; /* Bright yellow */
             color: #4a0e7a; /* Dark purple */
@@ -82,10 +98,13 @@
             transition: transform 0.2s ease, background-color 0.2s ease;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
             white-space: nowrap; /* Prevent text wrapping */
+            cursor: pointer; /* Add pointer cursor */
+            animation: pulse 2s infinite ease-in-out; /* Apply pulse animation */
         }
         .button-style:hover {
             transform: translateY(-3px);
             background-color: #e6b800; /* Slightly darker yellow */
+            animation: none; /* Stop pulse on hover for a cleaner interaction */
         }
         .qr-code-container {
             display: flex;
@@ -170,7 +189,7 @@
                 <div>
                     <h3 class="text-2xl font-bold mb-2 text-yellow-200">Date & Time</h3>
                     <p class="text-xl opacity-90">July 10, 2025</p>
-                    <p class="text-xl opacity-90">07:30 PM (Bangladesh Time)</p>
+                    <p class="text-xl opacity-90">07:45 PM (Bangladesh Time)</p>
                 </div>
                 <div>
                     <h3 class="text-2xl font-bold mb-2 text-yellow-200">Platform</h3>
@@ -209,6 +228,7 @@
                 </div>
             </div>
             <p class="text-sm mt-4 opacity-80">Limited spots available. Don't miss out!</p>
+            <p class="text-sm mt-4 opacity-80">Organised by Alumni, Department of Pharmacy, Jashore University of Science and Technology</p>
         </div>
     </div>
 </body>
