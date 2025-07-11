@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond Borders Conference</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -98,13 +97,14 @@
             transition: transform 0.2s ease, background-color 0.2s ease;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
             white-space: nowrap; /* Prevent text wrapping */
-            cursor: pointer; /* Add pointer cursor */
-            animation: pulse 2s infinite ease-in-out; /* Apply pulse animation */
+            cursor: default; /* Change cursor to default */
+            animation: none; /* Remove pulse animation */
+            text-decoration: none; /* Remove underline for anchor tag */
         }
         .button-style:hover {
-            transform: translateY(-3px);
-            background-color: #e6b800; /* Slightly darker yellow */
-            animation: none; /* Stop pulse on hover for a cleaner interaction */
+            transform: none; /* Remove transform on hover */
+            background-color: #ffcc00; /* Keep same background color on hover */
+            animation: none;
         }
         .qr-code-container {
             display: flex;
@@ -219,9 +219,9 @@
             <p class="text-2xl font-bold text-yellow-300 mb-4">Registration is FREE!</p>
 
             <div class="registration-options">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9-_pCXrJzKZTOdgBudgyt04SL0fBiorYfdfduMk9NWiGO0g/viewform?usp=dialog" target="_blank" class="button-style">
-                    Register Now!
-                </a>
+                <span class="button-style">
+                    Registration Time Over
+                </span>
                 <div class="qr-code-container">
                     <p class="text-lg font-semibold mb-2">Scan to Register</p>
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://docs.google.com/forms/d/e/1FAIpQLSc9-_pCXrJzKZTOdgBudgyt04SL0fBiorYfdfduMk9NWiGO0g/viewform?usp=dialog" alt="QR Code for Registration" class="w-36 h-36">
